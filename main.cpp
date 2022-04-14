@@ -1,5 +1,6 @@
 #include <iostream>
 #include "MilionerzyHeader.h"
+#include <time.h>
 
 using namespace std;
 
