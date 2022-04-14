@@ -12,5 +12,6 @@ void readLinesFromFile(std::string path);
 void PhoneToFriend();
 void Crowd();
 void fifty();
+void getAnswer();
 
 #endif // MILIONERZYHEADER_H

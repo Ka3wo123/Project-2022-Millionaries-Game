@@ -178,3 +178,125 @@ void fifty()
     writeAns[ first ] = false;
     writeAns[ second ] = false;
 }
+
+void getAnswer()
+{
+
+    char answer;
+
+options:
+    system("cls");
+    cout << "Pytanie nr " << stage << " za " << sum[stage] << " zl " << "(masz " << sum[stage-1] << " zl)" << endl;
+    cout << question << endl;
+    if( writeAns[0] ) cout << "A. " + ansA << endl;
+    else cout << endl;
+    if( writeAns[1] ) cout << "B. " + ansB << endl;
+    else cout << endl;
+    if( writeAns[2] ) cout << "C. " + ansC << endl;
+    else cout << endl;
+    if( writeAns[3] ) cout << "D. " + ansD << endl << endl;
+    else cout << endl;
+    if( run50  == true )
+    {
+        fifty();
+        run50 = false;
+        goto options;
+    }
+    if(phone)
+    {
+        cout << "5 - telefon do przyjaciela" << endl;
+    }
+    if(audience)
+    {
+        cout << "6 - pytanie do publicznosci" << endl;
+    }
+    if(fiftyFifty)
+    {
+        cout << "7 - 50/50" << endl;
+    }
+    cout << "8 - zrezygnuj" << endl;
+
+    cout << "Podaj odpowiedz lub wybierz opcje: ";
+    cin >> answer;
+
+
+    if(answer == 'A' || answer == 'a')
+    {
+        answer = '1';
+    } else if(answer == 'B' || answer == 'b')
+    {
+        answer = '2';
+    } else if(answer == 'C' || answer == 'c')
+    {
+        answer = '3';
+    } else if(answer == 'D' || answer == 'd')
+    {
+        answer = '4';
+    } else if (answer == '5' && phone)
+    {
+        PhoneToFriend();
+        this_thread::sleep_for(4000ms);
+        phone = false;
+        goto options;
+    } else if(answer == '6' && audience)
+    {
+        Crowd();
+        this_thread::sleep_for(4000ms);
+        audience = false;
+        goto options;
+    }
+    else if(answer == '7' && fiftyFifty)
+    {
+        run50 = true;
+        fiftyFifty = false;
+        goto options;
+    }else if(answer == '8')
+    {
+        system("cls");
+        cout << "Wygrales " << sum[stage - 1] << " zl" << endl;
+        exit(0);
+    } else
+    {
+        cout << "Wybierz dostepne opcje" << endl;
+        this_thread::sleep_for(1000ms);
+        system("cls");
+        goto options;
+
+    }
+    if(answer == correctAns)
+    {
+        system("cls");
+        cout << "Poprawna odpowiedz!" << endl;
+        this_thread::sleep_for(2000ms);
+        system("cls");
+    } else
+    {
+        system("cls");
+        cout << "Bledna odpowiedz!" << endl;
+
+        if(stage >= 5 && stage < 10)
+        {
+            cout << "Konczysz z kwota: " << sum[5] << " zl" << endl;
+        } else if(stage >= 10)
+        {
+            cout << "Konczysz z kwota: " << sum[10] << " zl" <<  endl;
+        } else
+        {
+            cout << "Konczysz z kwota: 0 zl " << endl;
+        }
+
+        gameStatus = false;
+
+    }
+
+    question = "";
+    ansA = "";
+    ansB = "";
+    ansC = "";
+    ansD = "";
+    for(int i = 0; i < 4; i++)
+    {
+        writeAns[i] = true;
+    }
+
+}
