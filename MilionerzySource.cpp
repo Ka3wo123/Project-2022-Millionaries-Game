@@ -308,3 +308,16 @@ void levelUp(string &s)
     levelNumberInt++;
     s = to_string(levelNumberInt);
 }
+
+void starterWindow()
+{
+    cout << "                                            **MILIONERZY**" << endl;
+    cout << "Witaj w grze Milionerzy!" << endl;
+    cout << "Przed Toba 15 pytan." << endl;
+    cout << "Poprawna odpowiedz to przejscie do kolejnego pytania." << endl;
+    cout << "Do wykorzystania masz 3 kola ratunkowe - telefon do przyjaciela, 50/50 oraz pytanie do publicznosci." << endl;
+    cout << "Dwa progi z suma gwarantowana przy 5. i 10. pytaniu." << endl;
+    cout << "Gotowy do gry? ";
+    system("pause");
+    system("cls");
+}
