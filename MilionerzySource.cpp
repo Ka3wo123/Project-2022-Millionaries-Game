@@ -72,7 +72,7 @@ void PhoneToFriend()
 {
     char answer = 64;
     int random;
-    if( !writeAns[0] || !wgit riteAns[1] || !writeAns[2] || !writeAns[3] )
+    if( !writeAns[0] || !writeAns[1] || !writeAns[2] || !writeAns[3] )
     {
         if( stage <= 5 )
         {
@@ -106,6 +106,55 @@ void PhoneToFriend()
                 cout << "Nie jestem pewien, ale mysle ze to odpowiedz: " << answer << endl;
                 break;
             }
+        }
+    }
+}
+void Crowd()
+{
+
+    char letter = 'A';
+    int suma = 100, other=0;
+    int correct = rand() % 51 + 50;
+    suma -= correct;
+
+     if( !writeAns[0] || !writeAns[1] ||  !writeAns[2] || !writeAns[3] )
+     {
+          cout << "Glosowanie publicznosci zakonczylo sie, a oto sa wyniki:" << endl;
+          for( int i = 0 ; i < 4 ; i++ )
+          {
+              if( letter - 16 == correctAns)
+              {
+                  cout << letter++ << ". " << correct << "%" << endl;
+              }
+              else if( writeAns[i] )
+              {
+                  cout << letter++ << ". " << suma << "%" << endl;
+              }
+              else
+              {
+                  cout << letter++ << "." << endl;
+              }
+          }
+          return;
+     }
+
+
+    cout << "Glosowanie publicznosci zakonczylo sie, a oto sa wyniki:" << endl;
+    for( int i = 1 ; i <= 4 ; i++)
+    {
+        if( i == correctAns - 48)
+        {
+            cout << letter++  << ". " << correct << "%" << endl;
+        }
+        else if( i == 4)
+        {
+            cout << letter++  << ". " << suma << "%" << endl;
+        }
+        else
+        {
+            other = rand() % (suma + 1);
+            suma -= other;
+            cout << letter++  << ". " << other << "%" << endl;
         }
     }
 }
