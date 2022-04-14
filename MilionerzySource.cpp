@@ -63,3 +63,49 @@ void readLinesFromFile(string path)
 
     file.close();
 }
+void Friend5()
+{
+    char answer = correctAns + 16;;
+    cout << "Moim zdaniem poprawna odpowiedzia jest odpowiedz: " << answer << endl;
+}
+void PhoneToFriend()
+{
+    char answer = 64;
+    int random;
+    if( !writeAns[0] || !wgit riteAns[1] || !writeAns[2] || !writeAns[3] )
+    {
+        if( stage <= 5 )
+        {
+            Friend5();
+            return;
+        }
+        else
+        {
+            for( int i = 0 ; i < 4 ; i++ )
+            {
+                if( writeAns[i] )
+                {
+                    answer += i + 1;
+                    cout << "Nie jestem pewien, ale mysle ze to odpowiedz: " << answer << endl;
+                    return;
+                }
+            }
+        }
+    }
+
+    if( stage <= 5 )
+        Friend5();
+    else
+    {
+        random = rand() % 4 + 1;
+        for( int i = 1; i < 5 ; i++)
+        {
+            if( i == random )
+            {
+                answer += i;
+                cout << "Nie jestem pewien, ale mysle ze to odpowiedz: " << answer << endl;
+                break;
+            }
+        }
+    }
+}

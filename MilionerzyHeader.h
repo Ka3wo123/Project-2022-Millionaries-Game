@@ -9,5 +9,5 @@ extern std::string question, ansA, ansB, ansC, ansD;
 extern char correctAns;
 
 void readLinesFromFile(std::string path);
-
+void PhoneToFriend();
 #endif // MILIONERZYHEADER_H
