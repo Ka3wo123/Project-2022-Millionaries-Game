@@ -300,3 +300,11 @@ options:
     }
 
 }
+
+void levelUp(string &s)
+{
+    int levelNumberInt;
+    levelNumberInt = stoi(s);
+    levelNumberInt++;
+    s = to_string(levelNumberInt);
+}

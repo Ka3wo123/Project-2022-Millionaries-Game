@@ -13,5 +13,6 @@ void PhoneToFriend();
 void Crowd();
 void fifty();
 void getAnswer();
+void levelUp(std::string &s);
 
 #endif // MILIONERZYHEADER_H
