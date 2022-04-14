@@ -8,4 +8,6 @@ extern unsigned stage, sum[16];
 extern std::string question, ansA, ansB, ansC, ansD;
 extern char correctAns;
 
+void readLinesFromFile(std::string path);
+
 #endif // MILIONERZYHEADER_H

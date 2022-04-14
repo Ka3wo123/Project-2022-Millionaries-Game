@@ -12,3 +12,54 @@ bool gameStatus = true, phone = true, audience = true, fiftyFifty = true, run50 
 unsigned stage = 1, sum[16] = {0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 25000, 500000, 1000000};
 string question, ansA, ansB, ansC, ansD;
 char correctAns;
+
+void readLinesFromFile(string path)
+{
+    ifstream file;
+    string nowy;
+    int lineCounter = 1, randomLine = rand() % 10 + 1, x = 0;
+    file.open(path);
+
+    if(file.good() != true)
+    {
+        cout << "Nie udalo sie otworzyc pliku z pytaniem" << endl;
+        file.close();
+        return;
+    }
+
+    while( true )
+        {
+
+            if(randomLine == lineCounter)
+            {
+                getline(file, nowy);
+                correctAns = nowy[nowy.length() - 1];
+
+                for(unsigned i = 0; i < nowy.length(); i++)
+                {
+                    if(nowy[i] == ';')
+                    {
+                        nowy[i] = ' ';
+                        x++;
+                    }
+                    switch(x)
+                    {
+
+                    case 0: question += nowy[i]; break;
+                    case 1: ansA += nowy[i]; break;
+                    case 2: ansB += nowy[i]; break;
+                    case 3: ansC += nowy[i]; break;
+                    case 4: ansD += nowy[i]; break;
+                    }
+                }
+                break;
+            }
+            else
+            {
+                lineCounter++;
+            }
+            getline(file, nowy);
+        }
+
+    file.close();
+}
