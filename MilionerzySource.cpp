@@ -63,11 +63,13 @@ void readLinesFromFile(string path)
 
     file.close();
 }
+
 void Friend5()
 {
     char answer = correctAns + 16;;
     cout << "Moim zdaniem poprawna odpowiedzia jest odpowiedz: " << answer << endl;
 }
+
 void PhoneToFriend()
 {
     char answer = 64;
@@ -109,6 +111,7 @@ void PhoneToFriend()
         }
     }
 }
+
 void Crowd()
 {
 
@@ -158,6 +161,7 @@ void Crowd()
         }
     }
 }
+
 void fifty()
 {
     int first, second;
