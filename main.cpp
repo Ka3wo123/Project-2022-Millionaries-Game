@@ -10,7 +10,7 @@ int main()
     int x = 1;
 
     srand( time( NULL) );
-    string path = "..\\Pytania\\.csv", levelNumber = "1";
+    string path = "..\\project_07_35223\\.csv", levelNumber = "1";
 
     starterWindow();
     while(stage <= 15 && gameStatus)
@@ -30,5 +30,7 @@ int main()
     {
         cout << "WYGRALES MILION ZLOTYCH!!!" << endl;
     }
+
+    return 0;
 
 }
