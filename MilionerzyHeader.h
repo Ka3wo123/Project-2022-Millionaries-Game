@@ -11,4 +11,6 @@ extern char correctAns;
 void readLinesFromFile(std::string path);
 void PhoneToFriend();
 void Crowd();
+void fifty();
+
 #endif // MILIONERZYHEADER_H

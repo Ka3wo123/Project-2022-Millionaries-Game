@@ -158,3 +158,23 @@ void Crowd()
         }
     }
 }
+void fifty()
+{
+    int first, second;
+    int tmpCor = correctAns - 49;
+
+    for( ; ; )
+    {
+        first = rand() % 4;
+        second = rand() % 4;
+        if( first == tmpCor || second == tmpCor || first == second )
+        {
+            continue;
+        } else
+        {
+            break;
+        }
+    }
+    writeAns[ first ] = false;
+    writeAns[ second ] = false;
+}
